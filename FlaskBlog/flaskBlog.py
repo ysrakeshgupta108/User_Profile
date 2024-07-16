@@ -147,7 +147,7 @@ def logout():
     session.pop('loggedin', None)
     session.pop('userid', None)
     session.pop('email', None)
-    return render_template('home.html', title='home', posts=posts)
+    return redirect(url_for("login"))
 
 @app.route('/users', methods=['GET', 'POST'])
 def all_users():
